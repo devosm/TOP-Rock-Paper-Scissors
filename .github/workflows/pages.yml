@@ -61,3 +61,4 @@ jobs:
         with:
           webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
           censor_username: false
+          hide_links: false
