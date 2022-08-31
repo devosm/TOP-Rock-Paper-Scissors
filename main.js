@@ -1,7 +1,19 @@
 function getComputerChoice() {
     let ComputerOptions = ["Rock", "Paper", "Scissors"]
-    let ComputerChoice = ComputerOptions[Math.floor(Math.random()*ComputerOptions.length)]
-    console.log(ComputerChoice)
+    const ComputerChoice = ComputerOptions[Math.floor(Math.random()*ComputerOptions.length)]
+    return ComputerChoice
 }
 
-getComputerChoice()
+function getPlayerChoice() {
+    const PlayerChoice = "rock";
+    return PlayerChoice
+}
+
+const PlayerSelection = getPlayerChoice()
+const ComputerSelection = getComputerChoice()
+
+function playRound() {
+    console.log("Computer chooses: " + ComputerSelection + " and Player chooses: " + PlayerSelection)
+}
+
+playRound()
