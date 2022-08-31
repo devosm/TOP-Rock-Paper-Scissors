@@ -53,10 +53,9 @@ jobs:
 
   git:
     runs-on: ubuntu-latest
+    needs: deploy
     steps:
-
       - uses: actions/checkout@v2
-
       - name: Run Discord Webhook
         uses: johnnyhuy/actions-discord-git-webhook@main 
         with:
