@@ -47,6 +47,8 @@ function playRound() {
 
 function game () {
     console.clear()
+    playerScore = 0
+    computerScore = 0
     let round = 0
     for (let i = 0; i < 5; i++) {
         round = round + 1
