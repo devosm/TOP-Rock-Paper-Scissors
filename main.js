@@ -5,7 +5,7 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    const PlayerChoice = "scissors";
+    const PlayerChoice = prompt("Select: Rock, Paper or Scissors");
     return PlayerChoice
 }
 
