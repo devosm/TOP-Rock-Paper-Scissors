@@ -46,6 +46,7 @@ function playRound() {
 }
 
 function game () {
+    console.clear()
     let round = 0
     for (let i = 0; i < 5; i++) {
         round = round + 1
@@ -61,5 +62,3 @@ function game () {
         console.log("Computer Wins!")
     }
 }
-
-game()
