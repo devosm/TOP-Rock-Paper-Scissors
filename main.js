@@ -9,13 +9,15 @@ function getPlayerChoice() {
     return PlayerChoice
 }
 
-const PlayerSelection = getPlayerChoice().toUpperCase()
-const ComputerSelection = getComputerChoice()
-
 function playRound() {
+    let PlayerSelection = getPlayerChoice().toUpperCase()
+    let ComputerSelection = getComputerChoice()
     console.log("Player Selected: " + PlayerSelection)
     console.log("Computer Selected: " + ComputerSelection)
-    if (PlayerSelection == ComputerSelection) {
+    if (PlayerSelection != "ROCK" && PlayerSelection != "PAPER" && PlayerSelection != "SCISSORS") {
+        console.log("You selected: " + PlayerSelection + " , please select a valid option.")
+        playRound()
+    } else if (PlayerSelection == ComputerSelection) {
         console.log("Draw, you both selected " + PlayerSelection)
     } else if (PlayerSelection == "PAPER" && ComputerSelection == "SCISSORS") {
         console.log("You lose, SCISSORS beats PAPER")
@@ -32,4 +34,10 @@ function playRound() {
     }
 }
 
-playRound()
+function game () {
+    for (let i = 0; i < 5; i++) {
+        playRound()
+    }
+}
+
+game()
