@@ -60,5 +60,6 @@ function game () {
         console.log("Draw!")
     } else {
         console.log("Computer Wins!")
+        console.log("Click on Start Game to start a new round")
     }
 }
