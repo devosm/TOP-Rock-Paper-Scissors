@@ -8,9 +8,15 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    const PlayerChoice = prompt("Select: Rock, Paper or Scissors");
-    return PlayerChoice
-}
+    let PlayerChoice = null
+    while (PlayerChoice == null) {
+        PlayerChoice = prompt("Choose ROCK, PAPER or SCISSORS")
+        if (PlayerChoice == null) {
+            console.error("Choice can't be empty")
+        }
+    }
+        return PlayerChoice
+    }
 
 function playRound() {
     let PlayerSelection = getPlayerChoice().toUpperCase()
