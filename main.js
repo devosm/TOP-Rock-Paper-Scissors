@@ -18,7 +18,7 @@ function playRound() {
     console.log("Player Selected: " + PlayerSelection)
     console.log("Computer Selected: " + ComputerSelection)
     if (! ["ROCK", "PAPER", "SCISSORS"].includes(PlayerSelection)) {
-        console.log("You selected: " + PlayerSelection + " , please select a valid option.")
+        console.error("You selected: " + PlayerSelection + " , please select a valid option.")
         playRound()
     } else if (PlayerSelection == ComputerSelection) {
         console.log("Draw, you both selected " + PlayerSelection)
