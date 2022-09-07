@@ -10,7 +10,7 @@ function getComputerChoice() {
 function getPlayerChoice() {
     let PlayerChoice = null
     let ChoiceCheck = "Invalid"
-    while (ChoiceCheck = "Invalid") {
+    while (ChoiceCheck == "Invalid") {
         if (PlayerChoice == null || PlayerChoice != "ROCK" || PlayerChoice != "PAPER" || PlayerChoice != "SCISSORS") {
             PlayerChoice = prompt("Choose ROCK, PAPER or SCISSORS")
             if (PlayerChoice == null) {
