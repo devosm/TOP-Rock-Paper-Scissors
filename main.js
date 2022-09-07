@@ -14,18 +14,18 @@ function getPlayerChoice() {
         if (PlayerChoice == null || PlayerChoice != "ROCK" || PlayerChoice != "PAPER" || PlayerChoice != "SCISSORS") {
             PlayerChoice = prompt("Choose ROCK, PAPER or SCISSORS")
             if (PlayerChoice == null) {
-                console.error("Choice can't be Empty")
+                console.error("Choice can't be empty")
                 ChoiceCheck = "Invalid"
             } else if (PlayerChoice.toUpperCase() != "ROCK" && PlayerChoice.toUpperCase() != "PAPER" && PlayerChoice.toUpperCase() != "SCISSORS") {
-                console.error("You chose " + PlayerChoice + " which is not a valid choice, please pick again.")
+                console.warn("You chose " + PlayerChoice + " which is not a valid choice, please pick again.")
                 ChoiceCheck = "Invalid"
             } else {
                 ChoiceCheck = "Valid"
+                return PlayerChoice
             }
         }
     }
-        return PlayerChoice
-    }
+}
 
 function playRound() {
     let PlayerSelection = getPlayerChoice().toUpperCase()
