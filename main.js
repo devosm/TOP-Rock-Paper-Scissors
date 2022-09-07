@@ -9,10 +9,19 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let PlayerChoice = null
-    while (PlayerChoice == null) {
-        PlayerChoice = prompt("Choose ROCK, PAPER or SCISSORS")
-        if (PlayerChoice == null) {
-            console.error("Choice can't be empty")
+    let ChoiceCheck = "Invalid"
+    while (ChoiceCheck = "Invalid") {
+        if (PlayerChoice == null || PlayerChoice != "ROCK" || PlayerChoice != "PAPER" || PlayerChoice != "SCISSORS") {
+            PlayerChoice = prompt("Choose ROCK, PAPER or SCISSORS")
+            if (PlayerChoice == null) {
+                console.error("Choice can't be Empty")
+                ChoiceCheck = "Invalid"
+            } else if (PlayerChoice.toUpperCase() != "ROCK" && PlayerChoice.toUpperCase() != "PAPER" && PlayerChoice.toUpperCase() != "SCISSORS") {
+                console.error("You chose " + PlayerChoice + " which is not a valid choice, please pick again.")
+                ChoiceCheck = "Invalid"
+            } else {
+                ChoiceCheck = "Valid"
+            }
         }
     }
         return PlayerChoice
@@ -23,10 +32,7 @@ function playRound() {
     let ComputerSelection = getComputerChoice()
     console.log("Player Selected: " + PlayerSelection)
     console.log("Computer Selected: " + ComputerSelection)
-    if (! ["ROCK", "PAPER", "SCISSORS"].includes(PlayerSelection)) {
-        console.error("You selected: " + PlayerSelection + " , please select a valid option.")
-        playRound()
-    } else if (PlayerSelection == ComputerSelection) {
+    if (PlayerSelection == ComputerSelection) {
         console.log("Draw, you both selected " + PlayerSelection)
         playerScore = playerScore + 1
         computerScore = computerScore + 1
